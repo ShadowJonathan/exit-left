@@ -203,6 +203,11 @@ where
         }
     }
 
+    /// Grantes a mutex guard (mutable) reference to the buffer.
+    pub fn buffer(&self) -> MutexGuard<'_, B> {
+        self.buffer.lock()
+    }
+
     /// Provides "backdoor" access to the stage's protected resource.
     ///
     /// This is not really "unsafe" in the memory way, but rather "unsafe" in the semantic way.
