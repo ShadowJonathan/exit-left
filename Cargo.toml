@@ -1,0 +1,9 @@
+[package]
+name = "exit_left"
+authors = ["Jonathan de Jong <jonathan@automatia.nl>"]
+license = "EUPL-1.2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+parking_lot = "0.11.2"
