@@ -31,7 +31,8 @@ Unlike a `TcpStream`, a `UdpSocket` has two potential modes, "Connected", or "No
 
 The former merely meaning that a filter is in place for a particular source, and all other packets are dropped.
 
-Thus, normally, a `UdpSocket` in only "Connected" states would have to be constructed again and again for every connection it is used for.
+Thus, normally, a `UdpSocket` in only "Connected" states would have to be constructed again and again for every local-remote tuple it would be used for,
+with local ports becoming unaccessible to the rest of the system after its been `bind`-ed.
 
 So, the `Stage` can help many threads to await a socket at the same time, while only one does the actual routing work,
 while still leaving the ability to notify threads waiting for "their" endpoint.
